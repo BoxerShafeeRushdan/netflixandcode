@@ -13,9 +13,16 @@ async function seed(){
     let sherlock = await Show.create({title:"Sherlock",genre:"Mystery",rating:"10/10",status:"watched"})
     let peekyblinders = await Show.create({title:"Peeky Blinders",genre:"Thriller",rating:"10/10",status:"watched"})
     let topboy = await Show.create({title:"Top Boy",genre:"Thriller",rating:"9/10",status:"watched"})
+    let topgear = await Show.create({title:"Top Gear",genre:"Documentary",rating:"7/10",status:"unwatched"})
+    let lockeandkey = await Show.create({title:"Locke & Key",genre:"Mystery",rating:"8/10",status:"unwatched"})
+
+    let strangerthings = await Show.create({title:"Stranger Things",genre:"Thriller",rating:"5/10",status:"unwatched"})
+    let baki = await Show.create({title:"Baki",genre:"Anime",rating:"8/10",status:"unwatched"})
+    let blackmirror = await Show.create({title:"Black Mirror",genre:"Docuumentary",rating:"10/10",status:"unwatched"})
+    let boondocks = await Show.create({title:"Boondocks",genre:"Documentary",rating:"10/10",status:"unwatched"})
+    let rickandmorty = await Show.create({title:"Rick and Morty",genre:"Mystery",rating:"10/10",status:"unwatched"})
     
-    //Add if watched
-    
+    //Add if watched attempt 1
     if(sherlock.status === "watched"){
         await ash.addShow(sherlock);
     }else{
@@ -23,14 +30,14 @@ async function seed(){
     }
 
 
-    if(sherlock.status === "watched"){
+    if(peekyblinders.status === "watched"){
         await misty.addShow(peekyblinders);
     }else{
         console.log("Unwatched!") 
     }
    
    
-    if(sherlock.status === "watched"){
+    if(topboy.status === "watched"){
         await brock.addShow(topboy);
     }else{
         console.log("Unwatched!") 

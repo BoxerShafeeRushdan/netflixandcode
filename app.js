@@ -81,11 +81,15 @@ app.delete('/shows/:id', async (req, res) => {
     res.send('Show Deleted!')
 })
 
+//Enlightened Add if watched 
 
-app.put('/users/:id', async (req, res) => {
-    await User.update(req.body, {
-        where: {id: req.params.id}
+app.put('/users/:userid/shows/:showid', async (req, res) => {
+    await Show.update({Userid: req.params.userid}, 
+        {
+            where:{id: req.params.showid}
     })
+        
+    
     res.send("Updated!")
 })
 
