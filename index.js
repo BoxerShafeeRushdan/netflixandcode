@@ -17,9 +17,14 @@ Show.init({
     genre: DataTypes.STRING,
     rating: DataTypes.STRING,
     status: DataTypes.STRING,
+    stars: DataTypes.STRING,
 }, {
     sequelize,
     timestamps: false,
 });
+
+User.hasMany(Show)
+
+Show.belongsTo(User)
 
 module.exports = { User, Show }
